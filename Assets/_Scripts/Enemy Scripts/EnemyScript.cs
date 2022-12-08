@@ -24,19 +24,17 @@ public class EnemyScript : MonoBehaviour
 		aiDestinationSetter.target = player.transform;
 	}
 
-	private void Update() {
+	public void killSelf() {
+		if (Random.Range(0, 2) == 0) {
+			Instantiate(xp, transform.position, Quaternion.identity);
+		}
+		Destroy(this.gameObject);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.CompareTag("Player")) {
 			Destroy(this.gameObject);
 			Debug.Log("Hit!");
-		} else if (collision.CompareTag("PowerUps")) {
-			if (Random.Range(0, 2) == 0) {
-				Instantiate(xp, transform.position, Quaternion.identity);
-			}
-			Destroy(this.gameObject);
 		}
 	}
-
 }
