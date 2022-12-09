@@ -19,7 +19,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.CompareTag("weapon")) {
-            health -= collision.GetComponent<WeaponScript>
+            health -= collision.GetComponent<WPN_Damage>().weaponDamage;
 		}
 	}
 
