@@ -25,7 +25,7 @@ public class EnemyHealthScript : MonoBehaviour
 
 	private void Update() {
 		if (health <= 0) {
-			enemyScript.killSelf();
+			enemyScript.KillSelf();
 		}
 	}
 

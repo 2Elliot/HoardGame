@@ -8,7 +8,9 @@ public class WPN_Field : MonoBehaviour
 	PlayerStats playerStats;
 
     float timer = 0;
-    void Start()
+	float localTimer = 0;
+
+	void Start()
     {
     	playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
     }
@@ -19,23 +21,22 @@ public class WPN_Field : MonoBehaviour
     }
 
     void damageTimer() {
-        if (timer < playerStats.fieldCoolDown) {
-            timer += Time.deltaTime;
-        } else {
-            timer = 0;
-
+		timer += Time.deltaTime;
+		if (timer >= playerStats.fieldCoolDown) {
+            doDamage();
         }
 
     }
 
     void doDamage() {
-        Debug.Log("wave");
-        float localTimer = 0;
-        GetComponent<Collider>().isTrigger = true;
-        if (localTimer < 0.2f) {
-            localTimer += Time.deltaTime;
-        }
-        GetComponent<Collider>().isTrigger = false;
-    }
+        GetComponent<CircleCollider2D>().enabled = true;
+        if (localTimer >= 0.2f) {
+            GetComponent<CircleCollider2D>().enabled = false;
+            localTimer = 0f;
+			timer = 0;
+		} else {
+			localTimer += Time.deltaTime;
+		}
+	}
 
 }

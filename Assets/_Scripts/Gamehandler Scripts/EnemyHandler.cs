@@ -27,8 +27,6 @@ public class EnemyHandler : MonoBehaviour
 			time = 0f;
 			enemySpawnRate = enemySpawnRate * 0.9f;
 			enemySpeed += 0.1f;
-			playerStats.sawSpeed += 10f;
-			playerStats.playerSpeed += 0.1f;
 		}
 	}
 

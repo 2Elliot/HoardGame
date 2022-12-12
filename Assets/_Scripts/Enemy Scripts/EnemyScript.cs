@@ -14,17 +14,20 @@ public class EnemyScript : MonoBehaviour
 
 	private EnemyHandler enemyHandler;
 
-	private void Start() {
+	private void Awake() {
 		player = GameObject.FindGameObjectWithTag("Player");
 		enemyHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<EnemyHandler>();
 		enemyRigidbody2D = GetComponent<Rigidbody2D>();
 		aiDestinationSetter = GetComponent<AIDestinationSetter>();
 		aiBase = GetComponent<AIBase>();
+	}
+
+	private void Start() {
 		aiBase.maxSpeed = enemyHandler.enemySpeed;
 		aiDestinationSetter.target = player.transform;
 	}
 
-	public void killSelf() {
+	public void KillSelf() {
 		if (Random.Range(0, 2) == 0) {
 			Instantiate(xp, transform.position, Quaternion.identity);
 		}
