@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
 	private Rigidbody2D enemyRigidbody2D;
 	private AIBase aiBase;
 	private AIDestinationSetter aiDestinationSetter;
+	private Pathfinding.AIPath aiPath;
 
 	public GameObject xp;
 
@@ -20,10 +21,16 @@ public class EnemyScript : MonoBehaviour
 		enemyRigidbody2D = GetComponent<Rigidbody2D>();
 		aiDestinationSetter = GetComponent<AIDestinationSetter>();
 		aiBase = GetComponent<AIBase>();
+		aiPath = GetComponent<AIPath>();
+	
 	}
 
 	private void Start() {
-		aiBase.maxSpeed = enemyHandler.enemySpeed;
+		aiPath.maxSpeed = enemyHandler.enemySpeed;
+
+	}
+
+	private void Update() {
 		aiDestinationSetter.target = player.transform;
 	}
 

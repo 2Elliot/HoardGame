@@ -14,11 +14,6 @@ public class EnemyHandler : MonoBehaviour
 	private float timer = 5f;
 	private float time = 0f;
 
-	private PlayerStats playerStats;
-
-	private void Start() {
-		playerStats = GetComponent<PlayerStats>();
-	}
 
 	private void Update() {
 		time += Time.deltaTime;

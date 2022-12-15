@@ -1,17 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class WPN_Whip_WhenEnabled : MonoBehaviour
 {
 	private float timer = 0;
 	private bool isEnabled;
-
-	private PlayerStats playerStats;
-
-	private void Awake() {
-		playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
-	}
 
 	private void OnEnable() {
 		isEnabled = true;
@@ -22,7 +17,7 @@ public class WPN_Whip_WhenEnabled : MonoBehaviour
 
 			timer += Time.deltaTime;
 
-			if (timer > playerStats.whipSpeed / 5) {
+			if (timer > Whip.speed / 5) {
 				this.gameObject.SetActive(false);
 				timer = 0;
 			}

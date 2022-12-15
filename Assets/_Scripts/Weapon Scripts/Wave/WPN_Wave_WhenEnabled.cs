@@ -1,24 +1,19 @@
 using System;
 using UnityEngine;
+using Stats;
 
 public class WPN_Wave_WhenEnabled : MonoBehaviour
 {
-	private PlayerStats playerStats;
-
 	private float timer;
 
 	private Vector2 scale = new Vector2 (1, 1);
-
-	private void Awake() {
-		playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
-	}
 
 	private void Update() {
 
 		timer += Time.deltaTime;
 
-		scale[0] += timer * playerStats.waveSpeed;
-		scale[1] += timer * playerStats.waveSpeed;
+		scale[0] += timer * Wave.speed;
+		scale[1] += timer * Wave.speed;
 
 		gameObject.transform.localScale = scale;
 

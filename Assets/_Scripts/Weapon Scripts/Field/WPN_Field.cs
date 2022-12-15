@@ -1,19 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class WPN_Field : MonoBehaviour
 {
 
-	PlayerStats playerStats;
-
     float timer = 0;
 	float localTimer = 0;
-
-	void Start()
-    {
-    	playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
-    }
 
     void Update()
     {
@@ -22,7 +16,7 @@ public class WPN_Field : MonoBehaviour
 
     void damageTimer() {
 		timer += Time.deltaTime;
-		if (timer >= playerStats.fieldCoolDown) {
+		if (timer >= Field.coolDown) {
             doDamage();
         }
 

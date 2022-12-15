@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Stats;
 
 public class PlayerController : MonoBehaviour {
 
 	private PlayerInputActions playerInputActions;
-	private PlayerStats playerStats;
-
 
 	void Start() {
 
@@ -13,8 +12,6 @@ public class PlayerController : MonoBehaviour {
 		playerInputActions.Player.Enable();
 		playerInputActions.Player.Pause.performed += Pause;
 		playerInputActions.Player.Enter.performed += Enter;
-
-		playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerStats>();
 	}
 
 	private void Update() {
@@ -23,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void Move() {
 		Vector2 inputVector = playerInputActions.Player.Movement.ReadValue<Vector2>();
-		transform.Translate(playerStats.playerSpeed * Time.deltaTime * inputVector);
+		transform.Translate(Player.speed * Time.deltaTime * inputVector);
 	}
 
 	public void Pause(InputAction.CallbackContext context) {

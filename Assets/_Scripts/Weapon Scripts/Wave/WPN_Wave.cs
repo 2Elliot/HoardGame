@@ -1,23 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class WPN_Wave : MonoBehaviour
 {
-	PlayerStats playerStats;
-
 	[SerializeField] private GameObject waveObj;
 
 	private float timer;
 
-	private void Awake() {
-		playerStats = GameObject.FindWithTag("GameController").GetComponent<PlayerStats>();
-	}
-
 	private void Update() {
 		timer += Time.deltaTime;
 
-		if (timer > playerStats.waveCooldown) {
+		if (timer > Wave.cooldown) {
 			waveObj.SetActive(true);
 			timer = 0;
 		}

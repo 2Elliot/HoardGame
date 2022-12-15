@@ -6,20 +6,16 @@ public class EnemySpawnerScript : MonoBehaviour {
 
 	private GameObject player;
 
-	private PlayerStats playerStats;
-
 	public GameObject enemy;
 
 	private EnemyHandler enemyHandler;
 
 	private float timer;
 
-	//Vector3 scale = transform.localScale;
 
 
 	private void Start() {
 		player = GameObject.FindGameObjectWithTag("Player");
-		// playerStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<playerStats>();
 		enemyHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<EnemyHandler>();
 		Vector3 scale = transform.localScale;
 
@@ -27,7 +23,6 @@ public class EnemySpawnerScript : MonoBehaviour {
 
 	private void Update() {
 		transform.position = player.transform.position;
-		//scale.Set(playerStats.fieldSize, playerStats.fieldSize, 0f);
 		SpawnEnemies();
 	}
 
