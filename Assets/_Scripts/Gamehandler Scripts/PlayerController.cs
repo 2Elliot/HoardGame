@@ -5,9 +5,10 @@ using Stats;
 public class PlayerController : MonoBehaviour {
 
 	private PlayerInputActions playerInputActions;
+	private PauseHandler pauseHandler;
 
 	void Start() {
-
+		pauseHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseHandler>();
 		playerInputActions = new();
 		playerInputActions.Player.Enable();
 		playerInputActions.Player.Pause.performed += Pause;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void Pause(InputAction.CallbackContext context) {
 		if (context.performed) {
-			Debug.Log("Pause");
+			pauseHandler.pause();
 		}
 	}
 

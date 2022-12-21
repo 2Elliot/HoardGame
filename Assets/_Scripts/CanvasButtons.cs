@@ -6,12 +6,7 @@ using UnityEngine.SceneManagement;
 public class CanvasButtons : MonoBehaviour
 {
 
-    private GameObject canvas;
-
-    private void Start() {
-        //canvas = this;
-    }
-
+    // Main Menu Buttons
     public void PlayButton() {
         ChangeScene("Level 1");
     }
@@ -24,6 +19,8 @@ public class CanvasButtons : MonoBehaviour
         Application.Quit();
     }
 
+
+    // In Game Buttons
     public void InGameSettingsButton() {
         gameObject.SetActive(false);
     }

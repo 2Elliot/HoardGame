@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
-public class WPN_Trail_Prefab : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class WPN_Trail_Prefab : MonoBehaviour {
+    private float timer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        gameObject.transform.parent = null;
     }
+    
+    private void Update() {
+        timer += Time.deltaTime;
+
+        if (timer >= Trail.coolDown) {
+    		Destroy(this.gameObject);
+        }
+    } 
+
 }
