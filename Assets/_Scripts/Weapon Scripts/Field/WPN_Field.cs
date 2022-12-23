@@ -16,7 +16,7 @@ public class WPN_Field : MonoBehaviour
 
     void damageTimer() {
 		timer += Time.deltaTime;
-		if (timer >= Field.coolDown) {
+		if (timer >= FieldStats.coolDown) {
             doDamage();
         }
 

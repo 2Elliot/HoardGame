@@ -13,7 +13,7 @@ public class WPN_Whip : MonoBehaviour
 	private void Update() {
 
 		timer += Time.deltaTime;
-		if (timer >= Player.speed) {
+		if (timer >= WhipStats.speed) {
 			attack();
 		}
 	}

@@ -9,10 +9,11 @@ public class WPN_Saw : MonoBehaviour {
 
 	void Start() {
 		player = GameObject.FindWithTag("Player");
-		transform.position = transform.position + new Vector3(0f, Saw.area, 0f);
+		transform.position = transform.position + new Vector3(0f, SawStats.area, 0f);
 	}
 
 	void Update() {
-        transform.RotateAround(player.transform.position, new Vector3(0, 0, -1), Saw.speed * Time.deltaTime);
+        transform.RotateAround(player.transform.position, new Vector3(0, 0, -1), SawStats.speed * Time.deltaTime);
+		transform.Rotate(new Vector3(0, 0, 1), 5f);
     }
 }

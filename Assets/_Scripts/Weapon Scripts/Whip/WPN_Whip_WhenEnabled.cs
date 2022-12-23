@@ -17,7 +17,7 @@ public class WPN_Whip_WhenEnabled : MonoBehaviour
 
 			timer += Time.deltaTime;
 
-			if (timer > Whip.speed / 5) {
+			if (timer > WhipStats.length) {
 				this.gameObject.SetActive(false);
 				timer = 0;
 			}

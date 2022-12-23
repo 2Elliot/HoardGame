@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8896268447444302099}
   - component: {fileID: 8896268447444302102}
   - component: {fileID: -6902978673119580460}
+  - component: {fileID: -7178196964386329066}
   - component: {fileID: 7675109781498517305}
   - component: {fileID: 3877237592205504429}
   - component: {fileID: 5605041665308305860}
-  - component: {fileID: -7178196964386329066}
   - component: {fileID: -3887639343358896603}
   m_Layer: 7
   m_Name: Enemy_2
@@ -104,6 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da52f1c9411cc4439acbaa3a276198c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   xp: {fileID: 4955207612789359641, guid: 164af841c927b2b4b8e81cb1ebce805e, type: 3}
 --- !u!58 &8896268447444302102
 CircleCollider2D:
@@ -142,6 +145,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &-7178196964386329066
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896268447444302098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &7675109781498517305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,22 +245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!58 &-7178196964386329066
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8896268447444302098}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &-3887639343358896603
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,12 +12,12 @@ public class WPN_Wave_WhenEnabled : MonoBehaviour
 
 		timer += Time.deltaTime;
 
-		scale[0] += timer * Wave.speed;
-		scale[1] += timer * Wave.speed;
+		scale[0] += timer * WaveStats.speed;
+		scale[1] += timer * WaveStats.speed;
 
 		gameObject.transform.localScale = scale;
 
-		if (gameObject.transform.localScale.y >= 45f) {
+		if (gameObject.transform.localScale.y >= 50f) {
 			gameObject.transform.localScale = scale;
 			timer = 0;
 			scale[0] = 0;
@@ -27,6 +27,7 @@ public class WPN_Wave_WhenEnabled : MonoBehaviour
 
 		}
 
+		transform.Rotate(new Vector3(0, 0, -1), 1f);
 	}
 
 }

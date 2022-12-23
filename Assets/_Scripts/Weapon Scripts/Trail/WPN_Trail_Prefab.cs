@@ -13,7 +13,7 @@ public class WPN_Trail_Prefab : MonoBehaviour {
     private void Update() {
         timer += Time.deltaTime;
 
-        if (timer >= Trail.coolDown) {
+        if (timer >= TrailStats.coolDown) {
     		Destroy(this.gameObject);
         }
     } 

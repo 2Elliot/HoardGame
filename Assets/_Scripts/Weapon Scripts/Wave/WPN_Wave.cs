@@ -12,7 +12,7 @@ public class WPN_Wave : MonoBehaviour
 	private void Update() {
 		timer += Time.deltaTime;
 
-		if (timer > Wave.cooldown) {
+		if (timer > WaveStats.cooldown) {
 			waveObj.SetActive(true);
 			timer = 0;
 		}
