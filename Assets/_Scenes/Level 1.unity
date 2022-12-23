@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 30
+  weaponDamage: 0
   weaponName: whip
 --- !u!114 &57783957
 MonoBehaviour:
@@ -1292,7 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 25
+  weaponDamage: 0
   weaponName: field
 --- !u!1 &402555568
 GameObject:
@@ -2647,7 +2647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 50
+  weaponDamage: 0
   weaponName: wave
 --- !u!1 &841586578
 GameObject:
@@ -2784,13 +2784,14 @@ GameObject:
   - component: {fileID: 1014251570}
   - component: {fileID: 1014251571}
   - component: {fileID: 1014251572}
+  - component: {fileID: 1014251573}
   m_Layer: 0
   m_Name: WPN_Saw
   m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1014251568
 Transform:
   m_ObjectHideFlags: 0
@@ -2898,8 +2899,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 25
+  weaponDamage: 0
   weaponName: saw
+--- !u!58 &1014251573
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014251567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1110961382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,7 +3075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDamage: 30
+  weaponDamage: 0
   weaponName: 'whi '
 --- !u!95 &1168718228
 Animator:

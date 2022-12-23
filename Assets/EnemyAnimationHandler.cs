@@ -12,7 +12,6 @@ public class EnemyAnimationHandler : MonoBehaviour
     void Start()
     {
 		parent = transform.parent;
-		transform.parent = null;
         animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
     }
@@ -31,4 +30,8 @@ public class EnemyAnimationHandler : MonoBehaviour
 			Destroy(this.gameObject);
 		}
     }
+
+    public void LooseParent() {
+		transform.parent = null;
+	}
 }

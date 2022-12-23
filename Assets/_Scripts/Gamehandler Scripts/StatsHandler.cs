@@ -17,30 +17,30 @@ namespace Stats {
 
     public class SawStats : MonoBehaviour {
         public static float area = 3f;
-        public static float damage = 25f;
+        public static int damage = 25;
         public static float speed = 200f;
     }
 
     public class FieldStats : MonoBehaviour {
-        public static float damage = 3f;
+        public static int damage = 3;
         public static float size = 3f;
         public static float coolDown = 0.5f;
     }
 
     public class WhipStats : MonoBehaviour {
-        public static float damage = 25f;
-        public static float length = 0.7f;
-        public static float speed = 4f;
+        public static int damage = 25;
+        public static float length = 0.5f;
+        public static float speed = 2f;
     }
 
     public class WaveStats : MonoBehaviour {
-        public static float damage = 50f;
+        public static int damage = 50;
         public static float cooldown = 30f;
         public static float speed = 0.3f;
     }
 
     public class TrailStats : MonoBehaviour {
-        public static float damage = 1f;
+        public static int damage = 1;
         public static float size = 1f;
         public static float coolDown = 2f;
     }

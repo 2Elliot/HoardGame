@@ -14,22 +14,22 @@ public class InteractStats : MonoBehaviour
 	[SerializeField] private float XP_Size;
 
 	[SerializeField] private float Saw_Area;
-	[SerializeField] private float Saw_Damage;
+	[SerializeField] private int Saw_Damage;
 	[SerializeField] private float Saw_Speed;
 
 	[SerializeField] private float Field_Size;
-	[SerializeField] private float Field_Damage;
+	[SerializeField] private int Field_Damage;
 	[SerializeField] private float Field_CoolDown;
 
-	[SerializeField] private float Whip_Damage;
+	[SerializeField] private int Whip_Damage;
 	[SerializeField] private float Whip_Length;
 	[SerializeField] private float Whip_Speed;
 
-	[SerializeField] private float Wave_Damage;
+	[SerializeField] private int Wave_Damage;
 	[SerializeField] private float Wave_CoolDown;
 	[SerializeField] private float Wave_Speed;
 
-	[SerializeField] private float Trail_Damage;
+	[SerializeField] private int Trail_Damage;
 	[SerializeField] private float Trail_CoolDown;
 	[SerializeField] private float Trail_Size;
 

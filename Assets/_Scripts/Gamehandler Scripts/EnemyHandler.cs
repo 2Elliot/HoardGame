@@ -8,8 +8,8 @@ public class EnemyHandler : MonoBehaviour
 	public float enemySpeed = 5f;
 	public float enemySpawnRate = 1f;
 
-	public float enemyOneHealth = 50f;
-	public float enemyTwoHealth = 100f;
+	public int enemyOneHealth = 50;
+	public int enemyTwoHealth = 100;
 
 	private float timer = 5f;
 	private float time = 0f;
@@ -25,7 +25,7 @@ public class EnemyHandler : MonoBehaviour
 		}
 	}
 
-	public float getEnemyHealth(int enemyNumber) {
+	public int getEnemyHealth(int enemyNumber) {
 		switch (enemyNumber) {
 			case 1:
 				return enemyOneHealth;
@@ -34,7 +34,7 @@ public class EnemyHandler : MonoBehaviour
 			default:
 				break;
 		}
-		return 0f;
+		return 0;
 	}
 
 }

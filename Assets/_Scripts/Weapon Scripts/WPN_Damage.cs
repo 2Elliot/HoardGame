@@ -5,7 +5,7 @@ using Stats;
 
 public class WPN_Damage : MonoBehaviour
 {
-	[HideInInspector] public float weaponDamage;
+	[HideInInspector] public int weaponDamage;
 	[SerializeField] string weaponName;
 
 	private void Start() {
