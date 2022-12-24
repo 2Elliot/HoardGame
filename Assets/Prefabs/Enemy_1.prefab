@@ -586,6 +586,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   xp: {fileID: 4955207612789359641, guid: 164af841c927b2b4b8e81cb1ebce805e, type: 3}
+  health: {fileID: 3743945854612417997, guid: d78fd6e5ee687ff4581750d21d937f40, type: 3}
+  magnet: {fileID: 646076569837708835, guid: 66c9077df7e74854cb74e29370e26252, type: 3}
+  enemyNumber: 1
 --- !u!58 &752823839593196193
 CircleCollider2D:
   m_ObjectHideFlags: 0

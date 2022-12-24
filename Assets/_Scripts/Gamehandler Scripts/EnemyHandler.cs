@@ -11,6 +11,9 @@ public class EnemyHandler : MonoBehaviour
 	public int enemyOneHealth = 50;
 	public int enemyTwoHealth = 100;
 
+	public int enemyOneDamage = 5;
+	public int enemyTwoDamage = 15;
+
 	private float timer = 5f;
 	private float time = 0f;
 
@@ -25,12 +28,24 @@ public class EnemyHandler : MonoBehaviour
 		}
 	}
 
-	public int getEnemyHealth(int enemyNumber) {
+	public int GetEnemyHealth(int enemyNumber) {
 		switch (enemyNumber) {
 			case 1:
 				return enemyOneHealth;
 			case 2:
 				return enemyTwoHealth;
+			default:
+				break;
+		}
+		return 0;
+	}
+
+	public int GetEnemyDamage(int enemyNumber) {
+		switch (enemyNumber) {
+			case 1:
+				return enemyOneDamage;
+			case 2:
+				return enemyTwoDamage;
 			default:
 				break;
 		}

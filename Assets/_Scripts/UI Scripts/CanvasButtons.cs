@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class CanvasButtons : MonoBehaviour
 {
+    public GameObject deathScene;
 
     // Main Menu Buttons
     public void PlayButton() {
-        ChangeScene("Level 1");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void SettingsButton() {
@@ -22,15 +23,16 @@ public class CanvasButtons : MonoBehaviour
 
     // In Game Buttons
     public void InGameSettingsButton() {
-        gameObject.SetActive(false);
+        
     }
 
     public void ReturnButton() {
-        gameObject.SetActive(true);
-    }
+        deathScene.SetActive(false);
+		SceneManager.LoadScene("Level 1");
+	}
 
-    public void QuitToMenuButton() {
-        ChangeScene("Main Menu");
+	public void QuitToMenuButton() {
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void ChangeScene(string levelName) {

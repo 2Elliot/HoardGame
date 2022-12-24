@@ -8,11 +8,15 @@ namespace Stats {
     public class PlayerStats : MonoBehaviour {
 	    public static float speed = 15f;
         public static float range = 2f;
-	    public static float xp = 0f;
+	    public static int xp = 0;
+        public static int level = 0;
+        public static int maxHp = 100;
+        public static int currentHp = 100;
     }
 
     public class XpStats : MonoBehaviour {
         public static float size = 3f;
+        public static int maxXp = 25;
     }
 
     public class SawStats : MonoBehaviour {
@@ -22,9 +26,9 @@ namespace Stats {
     }
 
     public class FieldStats : MonoBehaviour {
-        public static int damage = 3;
+        public static int damage = 5;
         public static float size = 3f;
-        public static float coolDown = 0.5f;
+        public static float coolDown = 0.05f;
     }
 
     public class WhipStats : MonoBehaviour {

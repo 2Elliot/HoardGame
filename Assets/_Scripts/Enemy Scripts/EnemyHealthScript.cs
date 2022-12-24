@@ -17,7 +17,7 @@ public class EnemyHealthScript : MonoBehaviour
     void Awake() {
         enemyHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<EnemyHandler>();
 		enemyScript = GetComponent<EnemyScript>();
-        health = enemyHandler.getEnemyHealth(enemyNumber);
+        health = enemyHandler.GetEnemyHealth(enemyNumber);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {

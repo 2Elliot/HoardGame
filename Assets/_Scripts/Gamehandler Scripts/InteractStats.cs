@@ -9,7 +9,11 @@ public class InteractStats : MonoBehaviour
 
     [SerializeField] private float Player_Speed;
 	[SerializeField] private float Player_Range;
-	[SerializeField] private float Player_XP;
+	[SerializeField] private int Player_XP;
+	[SerializeField] private int Player_Level;
+	[SerializeField] private int Player_MaxHp;
+	[SerializeField] private int Player_CurrentHp;
+
 
 	[SerializeField] private float XP_Size;
 
@@ -41,6 +45,9 @@ public class InteractStats : MonoBehaviour
 		Player_Speed = PlayerStats.speed;
 		Player_Range = PlayerStats.range;
 		Player_XP = PlayerStats.xp;
+		Player_Level = PlayerStats.level;
+		Player_MaxHp = PlayerStats.maxHp;
+		Player_CurrentHp = PlayerStats.currentHp;
 
 		XP_Size = XpStats.size;
 
@@ -73,6 +80,9 @@ public class InteractStats : MonoBehaviour
 		PlayerStats.speed = Player_Speed;
 		PlayerStats.range = Player_Range;
 		PlayerStats.xp = Player_XP;
+		PlayerStats.level = Player_Level;
+		PlayerStats.maxHp = Player_MaxHp;
+		PlayerStats.currentHp = Player_CurrentHp;
 
 		XpStats.size = XP_Size;
 
