@@ -6,6 +6,8 @@ using Stats;
 public class WPN_Trail_Prefab : MonoBehaviour {
     private float timer;
 
+    WPN_Field wpn_Field;
+
     private void Start() {
         gameObject.transform.parent = null;
     }

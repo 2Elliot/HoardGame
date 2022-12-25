@@ -21,7 +21,7 @@ public class EnemyHealthScript : MonoBehaviour
         health = enemyHandler.GetEnemyHealth(enemyNumber);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
+	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.CompareTag("weapon")) {
 			time = 0f;
 			health -= collision.GetComponent<WPN_Damage>().DoDamage(GetInstanceID());

@@ -5,32 +5,34 @@ using Stats;
 
 public class WPN_Field : MonoBehaviour
 {
+	private int[] enemiesArray = new int[100];
+	int i = 0;
 
-    float timer = 0;
-	float localTimer = 0;
-
-    void Update()
-    {
-        damageTimer();
-    }
-
-    void damageTimer() {
-		timer += Time.deltaTime;
-		if (timer >= FieldStats.coolDown) {
-            doDamage();
-        }
-
-    }
-
-    void doDamage() {
-        GetComponent<CircleCollider2D>().enabled = true;
-        if (localTimer >= 0.2f) {
-            GetComponent<CircleCollider2D>().enabled = false;
-            localTimer = 0f;
-			timer = 0;
-		} else {
-			localTimer += Time.deltaTime;
+	public int DoDamage(int enemy) {
+		Debug.Log("Ghid");
+		if (!HasDuplicate(enemy)) {
+			StartCoroutine(DamageCoolDown(enemy));
+			i++;
+			return FieldStats.damage;
 		}
+		return 0;
 	}
 
+	private bool HasDuplicate(int value) {
+		if (i >= enemiesArray.Length) i = 0;
+		for (int j = 0; j < enemiesArray.Length; j++) {
+			if (enemiesArray[j] == value) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	IEnumerator DamageCoolDown(int enemyID) {
+		int location = i;
+		enemiesArray[i] = enemyID;
+		yield return new WaitForSeconds(FieldStats.coolDown);
+		enemiesArray[location] = 0;
+
+	}
 }

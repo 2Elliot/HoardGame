@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &395079106
 Transform:
   m_ObjectHideFlags: 0
@@ -1480,7 +1480,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395079105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponScriptName: 
+  weaponScriptName: Field
 --- !u!1 &402555568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,7 +3846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1014251568
 Transform:
   m_ObjectHideFlags: 0
@@ -3954,7 +3954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponScriptName: 
+  weaponScriptName: Saw
 --- !u!58 &1014251573
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3987,7 +3987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1110961383
 Transform:
   m_ObjectHideFlags: 0
