@@ -52,7 +52,7 @@ public class EnemyScript : MonoBehaviour
 		Destroy(this.gameObject);
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
+	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.CompareTag("Player")) {
 			PlayerStats.currentHp -= enemyHandler.GetEnemyDamage(enemyNumber);
 			Destroy(this.gameObject);

@@ -5,39 +5,17 @@ using Stats;
 
 public class WPN_Damage : MonoBehaviour
 {
-	[HideInInspector] public int weaponDamage;
-	[SerializeField] string weaponName;
+	[SerializeField] string weaponScriptName;
 
-	private void Start() {
-		switch(weaponName) {
-			case "saw":
-				weaponDamage = SawStats.damage;
-				break;
-			case "field":
-				weaponDamage = FieldStats.damage;
-				break;
-			case "shoot":
-				//weaponDamage = ShootStats.damage;
-				break;
-			case "trail":
-				weaponDamage = TrailStats.damage;
-				break;
-			case "lightning":
-				//weaponDamage = LightningStats.damage;
-				break;
-			case "sword":
-				//weaponDamage = SwordStats.damage;
-				break;
-			case "hole":
-				//weaponDamage = HoleStats.damage;
-				break;
-			case "wave":
-				weaponDamage = WaveStats.damage;
-				break;
-			case "whip":
-				weaponDamage = WhipStats.damage;
-				break;
-
+	public int DoDamage(int weaponID) {
+		switch(weaponScriptName) {
+			case ("Whip"):
+				return transform.parent.GetComponent<WPN_Whip>().DoDamage(weaponID);
+			case ("Wave"):
+				return transform.parent.GetComponent<WPN_Wave>().DoDamage(weaponID);
+			default:
+				Debug.Log("WPN_Damage script returned null value");
+				return 0;
 		}
 	}
 }

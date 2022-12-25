@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Stats;
+using System;
+using System.Collections.Generic;
 
 public class WPN_Whip_WhenEnabled : MonoBehaviour
 {
 	private float timer = 0;
 	private bool isEnabled;
+
+
 
 	private void OnEnable() {
 		isEnabled = true;
@@ -18,10 +20,14 @@ public class WPN_Whip_WhenEnabled : MonoBehaviour
 			timer += Time.deltaTime;
 
 			if (timer > WhipStats.length) {
-				this.gameObject.SetActive(false);
+				gameObject.SetActive(false);
 				timer = 0;
 			}
 
 		}
 	}
+
+
+
+
 }

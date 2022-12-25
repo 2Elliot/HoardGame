@@ -8,7 +8,8 @@ public class EnemyHealthScript : MonoBehaviour
     EnemyHandler enemyHandler;
 	EnemyScript enemyScript;
 
-    public int enemyNumber;
+
+	public int enemyNumber;
 
 	private float time;
 
@@ -22,10 +23,8 @@ public class EnemyHealthScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.CompareTag("weapon")) {
-			if (time >= 0.1f) {
-				time = 0f;
-			health -= collision.GetComponent<WPN_Damage>().weaponDamage;
-			}
+			time = 0f;
+			health -= collision.GetComponent<WPN_Damage>().DoDamage(GetInstanceID());
 		}
 	}
 
