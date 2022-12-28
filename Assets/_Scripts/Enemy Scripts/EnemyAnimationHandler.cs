@@ -6,6 +6,7 @@ public class EnemyAnimationHandler : MonoBehaviour
 {
 
     Animator animator;
+    SpriteRenderer spriteRenderer;
     Transform player;
     Transform parent;
 
@@ -14,6 +15,7 @@ public class EnemyAnimationHandler : MonoBehaviour
 		parent = transform.parent;
         animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,6 +32,13 @@ public class EnemyAnimationHandler : MonoBehaviour
 			Destroy(this.gameObject);
 		}
     }
+
+    // TODO: Make sprite renderer flash white when in contact with player
+    // private void OnCollisionEnter2D(Collision2D other) {
+    //     if (other.gameObject.compareTag("Player")) {
+    //         spriteRenderer.sprite = new Color (White);
+    //     }
+    // }
 
     public void LooseParent() {
 		transform.parent = null;

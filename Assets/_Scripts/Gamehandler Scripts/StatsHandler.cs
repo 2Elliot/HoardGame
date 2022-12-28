@@ -45,7 +45,17 @@ namespace Stats {
 
     public class TrailStats : MonoBehaviour {
         public static int damage = 1;
-        public static float size = 1f;
+        public static float size = 1.5f;
+        public static float coolDown = 2f;
+        public static float length = 5f;
+    }
+
+    public class ShootStats : MonoBehaviour {
+        public static int damage = 10;
+        public static int number = 3;
+        public static float spread = 15f;
+        public static float distance = 2f;
+        public static float speed = 20f;
         public static float coolDown = 2f;
     }
 }

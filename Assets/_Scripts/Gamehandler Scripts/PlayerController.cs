@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 	float verticalRaySpacing;
 
 	Rigidbody2D rb;
-	BoxCollider2D collider;
+	BoxCollider2D boxCollider;
 	RaycastOrigins raycastOrigins;
 
 	void Start() {
@@ -28,13 +28,13 @@ public class PlayerController : MonoBehaviour {
 		playerInputActions.Player.Pause.performed += Pause;
 		playerInputActions.Player.Enter.performed += Enter;
 		rb = GetComponent<Rigidbody2D>();
-		collider = GetComponent<BoxCollider2D>();
+		boxCollider = GetComponent<BoxCollider2D>();
 
 		CalculateRaySpacing();
 	}
 
 	void UpdateRaycastOrigins() {
-		Bounds bounds = collider.bounds;
+		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
 
 		raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void CalculateRaySpacing() {
-		Bounds bounds = collider.bounds;
+		Bounds bounds = boxCollider.bounds;
 		bounds.Expand(skinWidth * -2);
 
 		horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);

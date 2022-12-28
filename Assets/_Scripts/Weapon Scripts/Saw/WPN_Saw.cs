@@ -43,9 +43,7 @@ public class WPN_Saw : MonoBehaviour {
 	IEnumerator DamageCoolDown(int enemyID) {
 		int location = i;
 		enemiesArray[i] = enemyID;
-		Debug.Log("Start");
 		yield return new WaitForSeconds(0.5f);
-		Debug.Log("Reset");
 		enemiesArray[location] = 0;
 
 	}

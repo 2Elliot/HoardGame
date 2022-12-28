@@ -9,7 +9,6 @@ public class WPN_Field : MonoBehaviour
 	int i = 0;
 
 	public int DoDamage(int enemy) {
-		Debug.Log("Ghid");
 		if (!HasDuplicate(enemy)) {
 			StartCoroutine(DamageCoolDown(enemy));
 			i++;
