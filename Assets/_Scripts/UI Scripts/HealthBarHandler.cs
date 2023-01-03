@@ -24,7 +24,6 @@ public class HealthBarHandler : MonoBehaviour {
 	}
 
 	void Die() {
-		PlayerStats.currentHp = PlayerStats.maxHp;
 		Debug.Log("Died");
 		Time.timeScale = 0;
 		deathScreen.SetActive(true);

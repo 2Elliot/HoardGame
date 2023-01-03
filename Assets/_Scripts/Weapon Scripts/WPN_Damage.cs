@@ -14,10 +14,6 @@ public class WPN_Damage : MonoBehaviour
 				return transform.GetComponent<WPN_Saw>().DoDamage(weaponID);
 			case ("Field"):
 				return transform.GetComponent<WPN_Field>().DoDamage(weaponID);
-			case ("Trail"):
-				return transform.GetComponent<WPN_Trail_Prefab>().DoDamage(weaponID);
-			case ("Shoot"):
-				return transform.GetComponent<WPN_Shoot_Prefab>().DoDamage(weaponID);
 			default:
 				Debug.Log("WPN_Damage null value");
 				return 0;

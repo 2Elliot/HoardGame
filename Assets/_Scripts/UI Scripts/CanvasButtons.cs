@@ -27,10 +27,8 @@ public class CanvasButtons : MonoBehaviour
     }
 
     public void ReturnButton() {
-        Time.timeScale = 1f;
         deathScene.SetActive(false);
 		SceneManager.LoadScene("Level 1");
-        Debug.Log("return");
 	}
 
 	public void QuitToMenuButton() {

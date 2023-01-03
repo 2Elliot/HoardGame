@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8b6cd72cc9045318c6fa4095202f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentObject: {fileID: 0}
 --- !u!114 &3159439438112945756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponScriptName: Trail
+  weaponDamage: 5
