@@ -1,4 +1,5 @@
 using UnityEngine;
+using Stats;
 using TMPro;
 
 public class PlayerLevelText : MonoBehaviour
@@ -8,19 +9,15 @@ public class PlayerLevelText : MonoBehaviour
 
 	int tempLevel = -1;
 
-	private int level;
-
 	private void Start() {
-		level = Singleton.Instance.playerLevel;
-
 		text = GetComponent<TMP_Text>();
 	}
 
 	void Update()
     {
-		if (tempLevel != level) {
-			tempLevel = level;
-			text.text = level.ToString();
+		if (tempLevel != PlayerStats.level) {
+			tempLevel = PlayerStats.level;
+			text.text = PlayerStats.level.ToString();
 		}
     }
 }

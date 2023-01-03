@@ -1,4 +1,5 @@
 using UnityEngine;
+using Stats;
 using System.Threading;
 using System;
 
@@ -9,8 +10,6 @@ public class XPScript : MonoBehaviour
 
 	bool triggered;
 
-	private float size;
-	private int currentXP;
 
 	CircleCollider2D circleCollider;
 	Transform player;
@@ -18,12 +17,9 @@ public class XPScript : MonoBehaviour
 	InteractStats interactStats;
 
 	private void Start() {
-		size = Singleton.Instance.xpSize;
-		currentXP = Singleton.Instance.playerXP;
-
 		circleCollider = GetComponent<CircleCollider2D>();
-		circleCollider.radius = size;
-		tempSize = size;
+		circleCollider.radius = XpStats.size;
+		tempSize = XpStats.size;
 		player = GameObject.FindWithTag("Player").transform;
 
 		interactStats = GameObject.FindWithTag("GameController").GetComponent<InteractStats>();
@@ -38,9 +34,9 @@ public class XPScript : MonoBehaviour
 
 	private void FixedUpdate() {
 
-		if (size != tempSize) {
-			circleCollider.radius = size;
-			tempSize = size;
+		if (XpStats.size != tempSize) {
+			circleCollider.radius = XpStats.size;
+			tempSize = XpStats.size;
 		}
 
 		if (triggered) {
@@ -48,8 +44,8 @@ public class XPScript : MonoBehaviour
 				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, velocity);
 				velocity += 0.01f;
 			} else {
-				currentXP++;
-				//interactStats.FetchStats();
+				PlayerStats.xp++;
+				interactStats.FetchStats();
 				Destroy(this.gameObject);
 			}
 		}

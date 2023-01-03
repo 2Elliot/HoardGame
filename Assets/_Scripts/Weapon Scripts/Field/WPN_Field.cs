@@ -1,28 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class WPN_Field : MonoBehaviour
 {
 	private int[] enemiesArray = new int[100];
 	int i = 0;
 
-	private int damage;
-	private float size;
-	private float coolDown;
-
-	private void Start() {
-		damage = Singleton.Instance.fieldDamage;
-		size = Singleton.Instance.fieldSize;
-		coolDown = Singleton.Instance.fieldCoolDown;
-	}
-
 	public int DoDamage(int enemy) {
 		Debug.Log("Ghid");
 		if (!HasDuplicate(enemy)) {
 			StartCoroutine(DamageCoolDown(enemy));
 			i++;
-			return damage;
+			return FieldStats.damage;
 		}
 		return 0;
 	}
@@ -40,7 +31,7 @@ public class WPN_Field : MonoBehaviour
 	IEnumerator DamageCoolDown(int enemyID) {
 		int location = i;
 		enemiesArray[i] = enemyID;
-		yield return new WaitForSeconds(coolDown);
+		yield return new WaitForSeconds(FieldStats.coolDown);
 		enemiesArray[location] = 0;
 
 	}

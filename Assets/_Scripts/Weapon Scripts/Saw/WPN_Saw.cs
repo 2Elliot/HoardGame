@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 using Unity.VisualScripting;
 
 public class WPN_Saw : MonoBehaviour {
@@ -10,21 +11,13 @@ public class WPN_Saw : MonoBehaviour {
 	private int[] enemiesArray = new int[100];
 	int i = 0;
 
-	private int damage;
-	private float area;
-	private float speed;
-
 	void Start() {
-		damage = Singleton.Instance.sawDamage;
-		area = Singleton.Instance.sawArea;
-		speed = Singleton.Instance.sawSpeed;
-
 		player = GameObject.FindWithTag("Player");
-		transform.position = transform.position + new Vector3(0f, area, 0f);
+		transform.position = transform.position + new Vector3(0f, SawStats.area, 0f);
 	}
 
 	void Update() {
-        transform.RotateAround(player.transform.position, new Vector3(0, 0, -1), speed * Time.deltaTime);
+        transform.RotateAround(player.transform.position, new Vector3(0, 0, -1), SawStats.speed * Time.deltaTime);
 		transform.Rotate(new Vector3(0, 0, 1), 5f);
     }
 
@@ -32,7 +25,7 @@ public class WPN_Saw : MonoBehaviour {
 		if (!HasDuplicate(enemy)) {
 			StartCoroutine(DamageCoolDown(enemy));
 			i++;
-			return damage;
+			return WhipStats.damage;
 		}
 		return 0;
 	}

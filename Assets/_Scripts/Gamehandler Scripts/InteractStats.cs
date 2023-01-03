@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class InteractStats : MonoBehaviour
 {
@@ -37,16 +38,16 @@ public class InteractStats : MonoBehaviour
 	[SerializeField] private float Trail_Size;
 
 	private void Start() {
-		//FetchStats();
+		FetchStats();
 	}
-	/*
+
 	public void FetchStats() {
-		Player_Speed = Singleton.Instance.playerspeed;
-		Player_Range = Singleton.Instance.playerrange;
-		Player_XP = Singleton.Instance.playerxp;
-		Player_Level = Singleton.Instance.playerlevel;
-		Player_MaxHp = Singleton.Instance.playermaxHp;
-		Player_CurrentHp = Singleton.Instance.playercurrentHp;
+		Player_Speed = PlayerStats.speed;
+		Player_Range = PlayerStats.range;
+		Player_XP = PlayerStats.xp;
+		Player_Level = PlayerStats.level;
+		Player_MaxHp = PlayerStats.maxHp;
+		Player_CurrentHp = PlayerStats.currentHp;
 
 		XP_Size = XpStats.size;
 
@@ -76,12 +77,12 @@ public class InteractStats : MonoBehaviour
 
 		Debug.Log("Pushed Stats");
 
-		Singleton.Instance.playerspeed = Player_Speed;
-		Singleton.Instance.playerrange = Player_Range;
-		Singleton.Instance.playerxp = Player_XP;
-		Singleton.Instance.playerlevel = Player_Level;
-		Singleton.Instance.playermaxHp = Player_MaxHp;
-		Singleton.Instance.playercurrentHp = Player_CurrentHp;
+		PlayerStats.speed = Player_Speed;
+		PlayerStats.range = Player_Range;
+		PlayerStats.xp = Player_XP;
+		PlayerStats.level = Player_Level;
+		PlayerStats.maxHp = Player_MaxHp;
+		PlayerStats.currentHp = Player_CurrentHp;
 
 		XpStats.size = XP_Size;
 
@@ -112,5 +113,4 @@ public class InteractStats : MonoBehaviour
 			PushStats();
 		}
 	}
-	*/
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Stats;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
@@ -16,26 +17,24 @@ public class PlayerController : MonoBehaviour {
 	float horizontalRaySpacing;
 	float verticalRaySpacing;
 
-	BoxCollider2D boxCollider;
+	Rigidbody2D rb;
+	BoxCollider2D collider;
 	RaycastOrigins raycastOrigins;
 
-	private float speed;
-
 	void Start() {
-		speed = Singleton.Instance.playerSpeed;
-
 		pauseHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<PauseHandler>();
 		playerInputActions = new();
 		playerInputActions.Player.Enable();
 		playerInputActions.Player.Pause.performed += Pause;
 		playerInputActions.Player.Enter.performed += Enter;
-		boxCollider = GetComponent<BoxCollider2D>();
+		rb = GetComponent<Rigidbody2D>();
+		collider = GetComponent<BoxCollider2D>();
 
 		CalculateRaySpacing();
 	}
 
 	void UpdateRaycastOrigins() {
-		Bounds bounds = boxCollider.bounds;
+		Bounds bounds = collider.bounds;
 		bounds.Expand(skinWidth * -2);
 
 		raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void CalculateRaySpacing() {
-		Bounds bounds = boxCollider.bounds;
+		Bounds bounds = collider.bounds;
 		bounds.Expand(skinWidth * -2);
 
 		horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);
@@ -76,7 +75,7 @@ public class PlayerController : MonoBehaviour {
 			VerticalCollisions(ref inputVector);
 		}
 
-		transform.Translate(inputVector * (speed / 100));
+		transform.Translate(inputVector * (PlayerStats.speed / 100));
 	}
 
 	void HorizontalCollisions(ref Vector2 inputVector) {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 using UnityEngine.UI;
 
 public class HealthBarHandler : MonoBehaviour {
@@ -12,15 +13,9 @@ public class HealthBarHandler : MonoBehaviour {
 	int localHealth;
 	int localMaxHealth;
 
-	private int maxHp;
-	private int currentHp;
-
 	private void Start() {
-		maxHp = Singleton.Instance.playerMaxHp;
-		currentHp = Singleton.Instance.playerCurrentHp;
-
 		slider = GetComponent<Slider>();
-		slider.maxValue = maxHp;
+		slider.maxValue = PlayerStats.maxHp;
 	}
 
 	void Die() {
@@ -31,17 +26,17 @@ public class HealthBarHandler : MonoBehaviour {
 
 	void Update() {
 
-		if (localHealth != currentHp) {
-			localHealth = currentHp;
-			slider.value = currentHp;
+		if (localHealth != PlayerStats.currentHp) {
+			localHealth = PlayerStats.currentHp;
+			slider.value = PlayerStats.currentHp;
 		}
 
-		if (localMaxHealth != maxHp) {
-			localMaxHealth = maxHp;
-			slider.maxValue = maxHp;
+		if (localMaxHealth != PlayerStats.maxHp) {
+			localMaxHealth = PlayerStats.maxHp;
+			slider.maxValue = PlayerStats.maxHp;
 		}
 
-		if (currentHp <= 0) {
+		if (PlayerStats.currentHp <= 0) {
 			Die();
 		}
 	}

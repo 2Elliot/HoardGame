@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stats;
 
 public class WPN_Wave : MonoBehaviour
 {
@@ -11,20 +12,10 @@ public class WPN_Wave : MonoBehaviour
 
 	private float timer;
 
-	private int damage;
-	private float coolDown;
-	private float speed;
-
-	private void Start() {
-		damage = Singleton.Instance.waveDamage;
-		coolDown = Singleton.Instance.waveCooldown;
-		speed = Singleton.Instance.waveSpeed;
-	}
-
 	private void Update() {
 		timer += Time.deltaTime;
 
-		if (timer > coolDown) {
+		if (timer > WaveStats.cooldown) {
 			for (int k = 0; k < enemiesArray.Length; k++) {
 				enemiesArray[k] = 0;
 			}
@@ -36,7 +27,7 @@ public class WPN_Wave : MonoBehaviour
 	public int DoDamage(int enemy) {
 		if (!HasDuplicate(enemy)) {
 			i++;
-			return damage;
+			return WaveStats.damage;
 		}
 		return 0;
 	}
