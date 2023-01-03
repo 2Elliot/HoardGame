@@ -44,7 +44,7 @@ public class HealthCollectableScript : MonoBehaviour {
 				velocity += 0.01f;
 			} else {
 				if (PlayerStats.currentHp + (PlayerStats.maxHp / 5) <= PlayerStats.maxHp) {
-					PlayerStats.currentHp += PlayerStats.maxHp / 5;
+					PlayerStats.currentHp += 20;
 				} else {
 					PlayerStats.currentHp = PlayerStats.maxHp;
 				}

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 	float verticalRaySpacing;
 
 	Rigidbody2D rb;
-	BoxCollider2D collider;
+	BoxCollider2D boxCollider;
 	RaycastOrigins raycastOrigins;
 
 	void Start() {
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 		playerInputActions.Player.Pause.performed += Pause;
 		playerInputActions.Player.Enter.performed += Enter;
 		rb = GetComponent<Rigidbody2D>();
-		collider = GetComponent<BoxCollider2D>();
+		boxCollider = GetComponent<BoxCollider2D>();
 
 		CalculateRaySpacing();
 	}
