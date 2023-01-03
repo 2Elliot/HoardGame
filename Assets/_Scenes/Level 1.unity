@@ -1551,13 +1551,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405720386}
+  - component: {fileID: 405720387}
+  - component: {fileID: 405720388}
   m_Layer: 0
   m_Name: WPN_Shoot
   m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &405720386
 Transform:
   m_ObjectHideFlags: 0
@@ -1573,6 +1575,32 @@ Transform:
   m_Father: {fileID: 402555569}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &405720387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405720385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd9292d1147b4fb39794d1e93e1f01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPrefab: {fileID: 7374101344192803357, guid: 9155b2077a20247cc864cce361e73a12, type: 3}
+--- !u!114 &405720388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405720385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6727a52d6e59a4c27a16ecb2e6b37ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponScriptName: Shoot
 --- !u!1 &411035857
 GameObject:
   m_ObjectHideFlags: 0
@@ -6700,6 +6728,7 @@ MonoBehaviour:
   Trail_Damage: 0
   Trail_CoolDown: 0
   Trail_Size: 0
+  Trail_Length: 0
 --- !u!114 &2058161215
 MonoBehaviour:
   m_ObjectHideFlags: 0
