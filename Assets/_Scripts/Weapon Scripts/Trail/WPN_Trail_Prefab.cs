@@ -23,4 +23,7 @@ public class WPN_Trail_Prefab : MonoBehaviour {
         }
     } 
 
+    public int DoDamage(int enemyID) {
+        return parentObject.GetComponent<WPN_Trail>().DoDamage(enemyID);
+    }
 }

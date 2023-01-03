@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void UpdateRaycastOrigins() {
-		Bounds bounds = collider.bounds;
+		Bounds bounds = GetComponent<BoxCollider2D>().bounds;
 		bounds.Expand(skinWidth * -2);
 
 		raycastOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void CalculateRaySpacing() {
-		Bounds bounds = collider.bounds;
+		Bounds bounds = GetComponent<BoxCollider2D>().bounds;
 		bounds.Expand(skinWidth * -2);
 
 		horizontalRayCount = Mathf.Clamp(horizontalRayCount, 2, int.MaxValue);

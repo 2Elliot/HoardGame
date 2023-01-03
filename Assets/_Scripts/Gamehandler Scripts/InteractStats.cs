@@ -7,8 +7,8 @@ public class InteractStats : MonoBehaviour
 {
 	[SerializeField] private bool push;
 
-    [SerializeField] private float Player_Speed;
-	[SerializeField] private float Player_Range;
+    [SerializeField] [Range(0.0f, 50.0f)] private float Player_Speed;
+	[SerializeField] [Range(0.0f, 30.0f)] private float Player_Range;
 	[SerializeField] private int Player_XP;
 	[SerializeField] private int Player_Level;
 	[SerializeField] private int Player_MaxHp;
@@ -114,3 +114,5 @@ public class InteractStats : MonoBehaviour
 		}
 	}
 }
+
+
