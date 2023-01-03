@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Stats;
 
 public class WPN_Damage : MonoBehaviour
 {
@@ -18,7 +15,7 @@ public class WPN_Damage : MonoBehaviour
 			case ("Field"):
 				return transform.GetComponent<WPN_Field>().DoDamage(weaponID);
 			default:
-				Debug.Log("WPN_Damage script returned null value");
+				Debug.Log("WPN_Damage null value");
 				return 0;
 		}
 	}

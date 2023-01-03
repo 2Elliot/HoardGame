@@ -1,5 +1,4 @@
 using Pathfinding;
-using Stats;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -20,6 +19,8 @@ public class EnemyScript : MonoBehaviour
 
 	public int enemyNumber;
 
+	private int currentHp;
+
 	private void Awake() {
 		player = GameObject.FindGameObjectWithTag("Player");
 		enemyHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<EnemyHandler>();
@@ -31,6 +32,8 @@ public class EnemyScript : MonoBehaviour
 	}
 
 	private void Start() {
+		currentHp = Singleton.Instance.playerCurrentHp;
+
 		aiPath.maxSpeed = enemyHandler.enemySpeed;
 
 	}
@@ -54,7 +57,7 @@ public class EnemyScript : MonoBehaviour
 
 	private void OnTriggerStay2D(Collider2D collision) {
 		if (collision.CompareTag("Player")) {
-			PlayerStats.currentHp -= enemyHandler.GetEnemyDamage(enemyNumber);
+			currentHp -= enemyHandler.GetEnemyDamage(enemyNumber);
 			Destroy(this.gameObject);
 		}
 	}

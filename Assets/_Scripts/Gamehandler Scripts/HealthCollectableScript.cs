@@ -1,5 +1,4 @@
 using UnityEngine;
-using Stats;
 using System.Threading;
 using System;
 
@@ -9,6 +8,9 @@ public class HealthCollectableScript : MonoBehaviour {
 
 	bool triggered;
 
+	private float xpSize;
+	private int maxHp;
+	private int currentHp;
 
 	CircleCollider2D circleCollider;
 	Transform player;
@@ -16,9 +18,14 @@ public class HealthCollectableScript : MonoBehaviour {
 	InteractStats interactStats;
 
 	private void Start() {
+		xpSize = Singleton.Instance.xpSize;
+		maxHp = Singleton.Instance.playerMaxHp;
+		currentHp = Singleton.Instance.playerCurrentHp;
+
+
 		circleCollider = GetComponent<CircleCollider2D>();
-		circleCollider.radius = XpStats.size;
-		tempSize = XpStats.size;
+		circleCollider.radius = xpSize;
+		tempSize = xpSize;
 		player = GameObject.FindWithTag("Player").transform;
 
 		interactStats = GameObject.FindWithTag("GameController").GetComponent<InteractStats>();
@@ -33,9 +40,9 @@ public class HealthCollectableScript : MonoBehaviour {
 
 	private void FixedUpdate() {
 
-		if (XpStats.size != tempSize) {
-			circleCollider.radius = XpStats.size;
-			tempSize = XpStats.size;
+		if (xpSize != tempSize) {
+			circleCollider.radius = xpSize;
+			tempSize = xpSize;
 		}
 
 		if (triggered) {
@@ -43,12 +50,12 @@ public class HealthCollectableScript : MonoBehaviour {
 				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, velocity);
 				velocity += 0.01f;
 			} else {
-				if (PlayerStats.currentHp + (PlayerStats.maxHp / 5) <= PlayerStats.maxHp) {
-					PlayerStats.currentHp += PlayerStats.maxHp / 5;
+				if (currentHp + (maxHp / 5) <= maxHp) {
+					currentHp +=maxHp / 5;
 				} else {
-					PlayerStats.currentHp = PlayerStats.maxHp;
+					currentHp =maxHp;
 				}
-				interactStats.FetchStats();
+				//interactStats.FetchStats();
 				Destroy(this.gameObject);
 			}
 		}

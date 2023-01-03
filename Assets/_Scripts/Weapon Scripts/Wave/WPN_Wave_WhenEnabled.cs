@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using Stats;
 
 public class WPN_Wave_WhenEnabled : MonoBehaviour
 {
@@ -8,12 +7,18 @@ public class WPN_Wave_WhenEnabled : MonoBehaviour
 
 	private Vector2 scale = new Vector2 (1, 1);
 
+	private float speed;
+
+	private void Start() {
+		speed = Singleton.Instance.waveSpeed;
+	}
+
 	private void Update() {
 
 		timer += Time.deltaTime;
 
-		scale[0] += timer * WaveStats.speed;
-		scale[1] += timer * WaveStats.speed;
+		scale[0] += timer * speed;
+		scale[1] += timer * speed;
 
 		gameObject.transform.localScale = scale;
 

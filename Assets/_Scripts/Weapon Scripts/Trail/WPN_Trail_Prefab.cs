@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Stats;
 
 public class WPN_Trail_Prefab : MonoBehaviour {
     private float timer;
 
-    WPN_Field wpn_Field;
+    private float coolDown;
 
     private void Start() {
-        gameObject.transform.parent = null;
+        coolDown = Singleton.Instance.waveCooldown;
+
+		gameObject.transform.parent = null;
     }
     
     private void Update() {
         timer += Time.deltaTime;
 
-        if (timer >= TrailStats.coolDown) {
+        if (timer >= coolDown) {
     		Destroy(this.gameObject);
         }
     } 

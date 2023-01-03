@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Stats;
-using System;
 
 public class WPN_Whip : MonoBehaviour
 {
@@ -11,13 +7,23 @@ public class WPN_Whip : MonoBehaviour
 	private int[] enemiesArray = new int[100];
 	int i = 0;
 
+	private int damage;
+	private float length;
+	private float speed;
+
 	[SerializeField] GameObject leftWhip;
 	[SerializeField] GameObject rightWhip;
+
+	private void Start() {
+		damage = Singleton.Instance.whipDamage;
+		length = Singleton.Instance.whipLength;
+		speed = Singleton.Instance.whipSpeed;
+	}
 
 	private void Update() {
 
 		timer += Time.deltaTime;
-		if (timer >= WhipStats.speed) {
+		if (timer >= speed) {
 			attack();
 		}
 	}
@@ -35,7 +41,7 @@ public class WPN_Whip : MonoBehaviour
 	public int DoDamage(int enemy) {
 		if (!HasDuplicate(enemy)) {
 			i++;
-			return WhipStats.damage;
+			return damage;
 		}
 		return 0;
 	}
