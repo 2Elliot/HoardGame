@@ -35,6 +35,16 @@ public class InteractStats : MonoBehaviour
 	[SerializeField] private int Trail_Damage;
 	[SerializeField] private float Trail_CoolDown;
 	[SerializeField] private float Trail_Size;
+	[SerializeField] private float Trail_Length;
+
+	[SerializeField] private int Shoot_Damage = 10;
+	[SerializeField] private int Shoot_Number = 3;
+	[SerializeField] private float Shoot_Spread = 15f;
+	[SerializeField] private float Shoot_Distance = 2f;
+	[SerializeField] private float Shoot_Speed = 20f;
+	[SerializeField] private float Shoot_CoolDown = 2f;
+
+
 
 	private void Start() {
 		//FetchStats();
@@ -69,6 +79,14 @@ public class InteractStats : MonoBehaviour
 		Trail_Damage = TrailStats.damage;
 		Trail_CoolDown = TrailStats.coolDown;
 		Trail_Size = TrailStats.size;
+		Trail_Length = TrailStats.length;
+
+		Shoot_Damage = ShootStats.damage;
+		Shoot_Number = ShootStats.number;
+		Shoot_Spread = ShootStats.speed;
+		Shoot_Distance = ShootStats.distance;
+		Shoot_Speed = ShootStats.speed;
+		Shoot_CoolDown = ShootStats.coolDown;
 	}
 
 	private void PushStats() {
@@ -104,6 +122,14 @@ public class InteractStats : MonoBehaviour
 		TrailStats.damage = Trail_Damage;
 		TrailStats.coolDown = Trail_CoolDown;
 		TrailStats.size = Trail_Size;
+		TrailStats.length = Trail_Length;
+
+		ShootStats.damage = Shoot_Damage;
+		ShootStats.number = Shoot_Number;
+		ShootStats.spread = Shoot_Spread;
+		ShootStats.distance = Shoot_Distance;
+		ShootStats.speed = Shoot_Speed;
+		ShootStats.coolDown = Shoot_CoolDown;
 	}
 
 	void Update()
