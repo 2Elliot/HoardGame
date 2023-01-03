@@ -42,7 +42,6 @@ public class WPN_Wave : MonoBehaviour
 			enemiesArray[i] = value;
 		}
 		catch {
-			Debug.Log("WPN_Wave Enemies overload");
 			for (int k = 0; k < enemiesArray.Length; k++) {
 				enemiesArray[k] = 0;
 			}

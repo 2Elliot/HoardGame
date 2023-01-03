@@ -39,7 +39,7 @@ public class HealthCollectableScript : MonoBehaviour {
 		}
 
 		if (triggered) {
-			if (Vector3.Distance(transform.position, player.transform.position) >= 0.2f) {
+			if (Vector3.Distance(transform.position, player.transform.position) >= 0.25f) {
 				transform.position = Vector3.MoveTowards(transform.position, player.transform.position, velocity);
 				velocity += 0.01f;
 			} else {
