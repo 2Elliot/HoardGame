@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Stats;
 using UnityEngine.UI;
@@ -9,12 +7,16 @@ public class XpBarHandler : MonoBehaviour
 
     Slider slider;
 
+    LevelUpHandler levelUpHandler;
+
     int currentXp; // Reset when reaches next level
     int localXp; // Compares tempXp and PlayerStats.xp
 
 	private void Start() {
         slider = GetComponent<Slider>();
         slider.maxValue = XpStats.maxXp;
+
+        levelUpHandler = GameObject.FindWithTag("GameController").GetComponent<LevelUpHandler>();
 	}
 
 	void ResetXp() {
@@ -23,6 +25,7 @@ public class XpBarHandler : MonoBehaviour
         XpStats.maxXp += (XpStats.maxXp / 8);
         slider.maxValue = XpStats.maxXp;
         PlayerStats.level++;
+        levelUpHandler.InitiateLevelUp();
     }
 
     void Update()

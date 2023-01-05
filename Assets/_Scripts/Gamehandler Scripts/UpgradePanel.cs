@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradePanel : MonoBehaviour
 {
 
-    [SerializeField] public UpgradeScreenScriptableObject[] upgrades;
+    public UpgradeScreenScriptableObject[] upgrades;
 
 	private UpgradeScreenScriptableObject[,,] fixedUpgrades;
 
+	private Image upgradeImage;
+
 	private void Start() {
+		upgradeImage = GetComponent<Image>();
+
 		for (int i = 0; i < upgrades.Length; i++) {
 			fixedUpgrades[upgrades[i].weaponInt, upgrades[i].upgradeInt, upgrades[i].rarityInt] = upgrades[i];
 		}
@@ -20,11 +23,13 @@ public class UpgradePanel : MonoBehaviour
 		int randomUpgradeType = Random.Range(0, 1);
 		int randomValue = Random.Range(1, 17);
 		for (int l = 0; l < 4; l++) {
-			if (fixedUpgrades[j, k, l].minRarity <= randomValue && fixedUpgrades[j, k, l].maxRarity >= randomValue) {
-
+			if (fixedUpgrades[randomWeapon, randomUpgradeType, l].minRarity <= randomValue && fixedUpgrades[randomWeapon, randomUpgradeType, l].maxRarity >= randomValue) {
+				FillUpgrade(fixedUpgrades[randomWeapon, randomUpgradeType, l]);
 			}
 		}
 	}
-		
 
+	private void FillUpgrade(UpgradeScreenScriptableObject input) {
+		upgradeImage = input.image;
+	}
 }
