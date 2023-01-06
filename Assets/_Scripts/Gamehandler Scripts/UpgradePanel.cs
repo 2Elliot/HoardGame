@@ -8,10 +8,12 @@ public class UpgradePanel : MonoBehaviour
 
 	private UpgradeScreenScriptableObject[,,] fixedUpgrades;
 
-	private Image upgradeImage;
+	private RawImage upgradeImage;
+
+	private bool isActive;
 
 	private void Start() {
-		upgradeImage = GetComponent<Image>();
+		upgradeImage = GetComponent<RawImage>();
 
 		for (int i = 0; i < upgrades.Length; i++) {
 			fixedUpgrades[upgrades[i].weaponInt, upgrades[i].upgradeInt, upgrades[i].rarityInt] = upgrades[i];
@@ -31,5 +33,12 @@ public class UpgradePanel : MonoBehaviour
 
 	private void FillUpgrade(UpgradeScreenScriptableObject input) {
 		upgradeImage = input.image;
+	}
+
+	private void Update() {
+		if (gameObject.activeSelf && !isActive) {
+			isActive = true;
+			GenerateRandomUpgrade();
+		}
 	}
 }
